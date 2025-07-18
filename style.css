@@ -1,0 +1,19 @@
+.hero-image {
+  height: 84px;
+  object-fit: cover;
+}
+
+.logo-container {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid #fe770c;
+}
+
+.logo-container img {
+  height: 64px;
+}

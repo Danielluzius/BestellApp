@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background: grey;
+  background: #fe770c;
 }
 
 main {
@@ -28,7 +28,7 @@ main {
 }
 
 footer {
-  background: grey;
+  background: #fe770c;
 }
 
 .section-wrapper {
