@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Das Projekt</title>
+    <title>Bite⚡Rush </title>
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./style/standart.css" />
@@ -14,36 +14,122 @@
     <script src="./scripts/template.js" defer></script>
     <script src="./scripts/database.js" defer></script>
 
-    <link rel="icon" href="./assets/img/Favicon/favicon-32x32.png" type="image/x-icon" />
+    <link rel="icon" href="./assets/img/Favicon/biterush_favicon.png" type="image/x-icon" />
 </head>
 
 <body onload="init()">
     <div class="page-wrapper">
 
+        <!-- OBERE NAVIGATION -->
         <header>
-            <div class="section-wrapper">
-                <img src="./assets/img/Logo/Logo.png" alt="Restaurantbild" class="hero-image">
-
-                <div class="logo-container">
-                    <img src="./assets/img/Logo/center-logo.png" alt="BestellApp Logo">
+            <div class="section-wrapper header-flex">
+                <img src="./assets/img/Logo/biterush_logo.png" alt="Logo" class="header-logo">
+                <div id="cart-button-mobile" class="hide-on-desktop">
+                    🛒 Warenkorb (0)
                 </div>
-
             </div>
         </header>
 
-        <main>
-            <div class="section-wrapper">
+        <!-- HERO + LOGO (zentriert über Bild) -->
+        <section id="hero">
+            <img src="./assets/img/hero_img.webp" alt="Hero Image" class="hero-image">
+            <div id="hero-logo">
+                <img src="./assets/img/Logo/restaurant_logo.png" alt="BestellApp Logo">
+            </div>
+        </section>
 
+        <main>
+            <div class="content-area section-wrapper">
+                <div class="main-content">
+
+                    <!-- Linke Inhaltsseite -->
+                    <div class="menu-area">
+
+                        <!-- Restaurant-Info -->
+                        <section id="restaurant-info">
+                            <h1>Baan Sabai – Thai Kitchen</h1>
+                        </section>
+
+                        <!-- Gerichteslider -->
+                        <nav id="dish-slider">
+                            <button class="btn"><a href="#vorspeisen">Vorspeisen</a></button>
+                            <button class="btn"><a href="#hauptgerichte">Hauptgerichte</a></button>
+                            <button class="btn"><a href="#desserts">Desserts</a></button>
+                            <button class="btn"><a href="#veggie">Veggie & Vegan</a></button>
+                            <button class="btn"><a href="#scharf">Scharfe Spezialitäten</a></button>
+                            <button class="btn"><a href="#getraenke">Getränke</a></button>
+                        </nav>
+
+                        <!-- Gerichtelisten -->
+                        <section id="menu-sections">
+
+                            <div class="dish-category" id="vorspeisen">
+                                <h2>Vorspeisen</h2>
+                                <p>Satay Gai, Frühlingsrollen, Tom Yum Gung – perfekt zum Einstieg.</p>
+                            </div>
+
+                            <div class="dish-category" id="hauptgerichte">
+                                <h2>Hauptgerichte</h2>
+                                <p>Pad Thai, Gaeng Daeng, Khao Pad – authentisch und lecker.</p>
+                            </div>
+
+                            <div class="dish-category" id="desserts">
+                                <h2>Desserts</h2>
+                                <p>Mango Sticky Rice, Thai-Kokos-Pudding, frittierte Banane.</p>
+                            </div>
+
+                            <div class="dish-category" id="veggie">
+                                <h2>Veggie & Vegan</h2>
+                                <p>Grünes Curry mit Tofu, Gemüsewok mit Erdnusssauce – tierfrei genießen.</p>
+                            </div>
+
+                            <div class="dish-category" id="scharf">
+                                <h2>Scharfe Spezialitäten</h2>
+                                <p>Som Tam, Thai-Basilikum-Huhn – für alle, die es feurig lieben.</p>
+                            </div>
+
+                            <div class="dish-category" id="getraenke">
+                                <h2>Getränke</h2>
+                                <p>Thai Iced Tea, Kokoswasser, Lemongras-Limo – erfrischend und exotisch.</p>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+
+                    <!-- Rechte Seite: Sticky-Warenkorb -->
+                    <aside id="cart-sidebar" class="hide-on-mobile">
+                        <h2>Warenkorb</h2>
+                        <div id="cart-content">Noch nichts ausgewählt.</div>
+                        <div id="cart-total">Gesamt: 0,00 €</div>
+                        <button class="btn" id="order-btn">Bestellen</button>
+                    </aside>
+
+                </div>
             </div>
         </main>
 
+
+        <!-- POPUP-WARENKORB (responsive) -->
+        <div id="cart-popup" class="popup hidden">
+            <h2>Dein Warenkorb</h2>
+            <div id="popup-cart-content">Noch nichts ausgewählt.</div>
+            <div id="popup-cart-total">Gesamt: 0,00 €</div>
+            <button id="popup-order-btn">Bestellen</button>
+            <button id="popup-close-btn">Schließen</button>
+        </div>
+
         <footer>
             <div class="section-wrapper">
-                <p>© 2025 Daniel</p>
+                <p>Impressum | Datenschutz | Kontakt | © 2025 Daniel</p>
             </div>
         </footer>
 
     </div>
 </body>
+
+
+
 
 </html>

@@ -1,3 +1,7 @@
+/* ===================================== */
+/* 1. BASIS-EINSTELLUNGEN & GRUNDLAYOUT  */
+/* ===================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,17 +22,22 @@ body {
   flex-direction: column;
 }
 
-header {
-  background: #fe770c;
-}
-
 main {
   flex: 1;
   background: white;
 }
 
+header {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+}
+
 footer {
-  background: #fe770c;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .section-wrapper {
@@ -36,10 +45,4 @@ footer {
   margin: 0 auto;
   padding: 20px 30px;
 }
-
-/* Responsive Anpassung */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px 20px;
-  }
-}
+/* ===================================== */
