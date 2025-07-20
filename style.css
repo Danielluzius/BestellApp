@@ -65,39 +65,17 @@
   align-self: flex-start;
   padding: 20px;
   box-shadow: -3px 0 0px rgba(0, 0, 0, 0.05);
-  background: linear-gradient(to bottom right, #ef476698, #ff995ab2);
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
   border-radius: 4px;
   color: white;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===================================== */
 /* 5. MOBILER WARENKORB / POPUP         */
 /* ===================================== */
-
-#cart-button-mobile {
-  background-color: #fe770c;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-#cart-popup {
-  position: fixed;
-  top: 20%;
-  left: 5%;
-  width: 90%;
-  background: white;
-  padding: 20px;
-  z-index: 999;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.hidden {
-  display: none;
-}
 
 /* ===================================== */
 /* 6. SICHTBARKEITSKLASSEN               */
@@ -144,32 +122,19 @@
 }
 
 .btn {
-  background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
-  border: 0;
-  border-radius: 12px;
-  color: #ffffff;
+  background-color: white;
+  color: #ef4765;
+  border: 2px solid #ef4765;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
-  outline: transparent;
-  padding: 4px 8px;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow 0.2s ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  text-decoration: none;
 }
 
-.btn:not([disabled]):focus {
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
-    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-.btn:not([disabled]):hover {
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
-    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+.btn:hover {
+  background-color: #ef4765;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
