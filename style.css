@@ -115,9 +115,13 @@
 /* 7. RESPONSIVE DESIGN                  */
 /* ===================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   .main-content {
     flex-direction: column;
+  }
+
+  nav {
+    display: none;
   }
 
   #cart-sidebar {
@@ -140,7 +144,7 @@
 }
 
 .btn {
-  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
   border: 0;
   border-radius: 12px;
   color: #ffffff;

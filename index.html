@@ -24,9 +24,14 @@
         <header>
             <div class="section-wrapper header-flex">
                 <img src="./assets/img/Logo/biterush_logo.png" alt="Logo" class="header-logo">
-                <div id="cart-button-mobile" class="hide-on-desktop">
-                    🛒 Warenkorb (0)
-                </div>
+                <nav id="dish-slider">
+                    <button class="btn"><a href="#vorspeisen">Vorspeisen</a></button>
+                    <button class="btn"><a href="#hauptgerichte">Hauptgerichte</a></button>
+                    <button class="btn"><a href="#desserts">Desserts</a></button>
+                    <button class="btn"><a href="#veggie">Veggie & Vegan</a></button>
+                    <button class="btn"><a href="#scharf">Scharfe Spezialitäten</a></button>
+                    <button class="btn"><a href="#getraenke">Getränke</a></button>
+                </nav>
             </div>
         </header>
 
@@ -45,20 +50,8 @@
                     <!-- Linke Inhaltsseite -->
                     <div class="menu-area">
 
-                        <!-- Restaurant-Info -->
-                        <section id="restaurant-info">
-                            <h1>Baan Sabai – Thai Kitchen</h1>
-                        </section>
+                        <h1>Baan Sabai – Thai Kitchen</h1>
 
-                        <!-- Gerichteslider -->
-                        <nav id="dish-slider">
-                            <button class="btn"><a href="#vorspeisen">Vorspeisen</a></button>
-                            <button class="btn"><a href="#hauptgerichte">Hauptgerichte</a></button>
-                            <button class="btn"><a href="#desserts">Desserts</a></button>
-                            <button class="btn"><a href="#veggie">Veggie & Vegan</a></button>
-                            <button class="btn"><a href="#scharf">Scharfe Spezialitäten</a></button>
-                            <button class="btn"><a href="#getraenke">Getränke</a></button>
-                        </nav>
 
                         <!-- Gerichtelisten -->
                         <section id="menu-sections">
@@ -109,16 +102,6 @@
                 </div>
             </div>
         </main>
-
-
-        <!-- POPUP-WARENKORB (responsive) -->
-        <div id="cart-popup" class="popup hidden">
-            <h2>Dein Warenkorb</h2>
-            <div id="popup-cart-content">Noch nichts ausgewählt.</div>
-            <div id="popup-cart-total">Gesamt: 0,00 €</div>
-            <button id="popup-order-btn">Bestellen</button>
-            <button id="popup-close-btn">Schließen</button>
-        </div>
 
         <footer>
             <div class="section-wrapper">
