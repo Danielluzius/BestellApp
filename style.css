@@ -58,7 +58,7 @@
 /* 4. STICKY WARENKORB                   */
 /* ===================================== */
 
-#cart-sidebar {
+.cart-sidebar {
   width: 300px;
   position: sticky;
   top: 20px;
@@ -93,17 +93,9 @@
 /* 7. RESPONSIVE DESIGN                  */
 /* ===================================== */
 
-@media (max-width: 940px) {
+@media (max-width: 950px) {
   .main-content {
     flex-direction: column;
-  }
-
-  nav {
-    display: none;
-  }
-
-  #cart-sidebar {
-    display: none;
   }
 
   .hide-on-mobile {
@@ -112,12 +104,6 @@
 
   .hide-on-desktop {
     display: block;
-  }
-
-  #cart-button-mobile {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
 }
 
