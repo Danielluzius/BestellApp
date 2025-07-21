@@ -11,14 +11,13 @@ function menuTemplate(menuRef, i) {
 
 function itemTemplate(item) {
   return /*html*/ `
-    
-        <div class="dish-item">
-            <div class="dish-item-container">
-            <h3>${item.name}</h3>
-            <p>Preis: ${item.price.toFixed(2)} €</p>
-            <p>${item.description}</p>
-            </div>
-            <button class="btn add-to-cart">+</button>
-        </div>    
-`;
+    <div class="dish-item">
+      <div class="dish-item-container">
+        <h3>${item.name}</h3>
+        <p>Preis: ${item.price.toFixed(2)} €</p>
+        <p>${item.description}</p>
+      </div>
+      <button onclick="onAddMenu('${item.name}', ${item.price})" class="btn add-to-cart">+</button>
+    </div>    
+  `;
 }
