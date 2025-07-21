@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./style/standart.css" />
     <link rel="stylesheet" href="./style/assets.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Jura:wght@300..700&display=swap"
+        rel="stylesheet">
+
     <script src="./script.js" defer></script>
     <script src="./scripts/template.js" defer></script>
     <script src="./scripts/database.js" defer></script>
@@ -24,14 +29,23 @@
         <header>
             <div class="section-wrapper header-flex">
                 <img src="./assets/img/Logo/biterush_logo.png" alt="Logo" class="header-logo">
+                <div class="mobile-controls hide-on-desktop">
+                    <button id="cart-btn" class="icon-btn">
+                        <img src="./assets/img/Logo/shopping_cart.webp" alt="Warenkorb" />
+                    </button>
+                    <button id="burger-btn" class="icon-btn" onclick="toggleMenu()">
+                        <img src="./assets/img/Logo/burgermenu.webp" alt="Menü" />
+                    </button>
+                </div>
                 <nav id="dish-slider" class="hide-on-mobile">
-                    <button class="btn"><a href="#vorspeisen">Vorspeisen</a></button>
-                    <button class="btn"><a href="#hauptgerichte">Hauptgerichte</a></button>
-                    <button class="btn"><a href="#desserts">Desserts</a></button>
-                    <button class="btn"><a href="#veggie">Veggie & Vegan</a></button>
-                    <button class="btn"><a href="#scharf">Scharfe Spezialitäten</a></button>
-                    <button class="btn"><a href="#getraenke">Getränke</a></button>
+                    <button class="btn"><a href="#dish_description_0">Vorspeisen</a></button>
+                    <button class="btn"><a href="#dish_description_1">Hauptgerichte</a></button>
+                    <button class="btn"><a href="#dish_description_2">Desserts</a></button>
+                    <button class="btn"><a href="#dish_description_3">Veggie & Vegan</a></button>
+                    <button class="btn"><a href="#dish_description_4">Scharfe Spezialitäten</a></button>
+                    <button class="btn"><a href="#dish_description_5">Getränke</a></button>
                 </nav>
+
             </div>
         </header>
 
@@ -49,47 +63,18 @@
 
                     <!-- Linke Inhaltsseite -->
                     <div class="menu-area">
-
-                        <h1>Baan Sabai – Thai Kitchen</h1>
-
-
-                        <!-- Gerichtelisten -->
-                        <section id="menu-sections">
-
-                            <div class="dish-category" id="vorspeisen">
-                                <h2>Vorspeisen</h2>
-                                <p>Satay Gai, Frühlingsrollen, Tom Yum Gung – perfekt zum Einstieg.</p>
+                        <div class="restaurant-info">
+                            <h1>Baan Sabai – Thai Kitchen</h1>
+                            <div class="restaurant-description">
+                                <p>Bewertung:</p>
+                                <img src="./assets/img/Logo/review.webp" alt="Bewertungen" class="review-logo">
                             </div>
+                            <p>Lieferkosten: 4,99 €</p>
+                            <p>Lieferzeit: 30-45 Minuten</p>
+                        </div>
 
-                            <div class="dish-category" id="hauptgerichte">
-                                <h2>Hauptgerichte</h2>
-                                <p>Pad Thai, Gaeng Daeng, Khao Pad – authentisch und lecker.</p>
-                            </div>
-
-                            <div class="dish-category" id="desserts">
-                                <h2>Desserts</h2>
-                                <p>Mango Sticky Rice, Thai-Kokos-Pudding, frittierte Banane.</p>
-                            </div>
-
-                            <div class="dish-category" id="veggie">
-                                <h2>Veggie & Vegan</h2>
-                                <p>Grünes Curry mit Tofu, Gemüsewok mit Erdnusssauce – tierfrei genießen.</p>
-                            </div>
-
-                            <div class="dish-category" id="scharf">
-                                <h2>Scharfe Spezialitäten</h2>
-                                <p>Som Tam, Thai-Basilikum-Huhn – für alle, die es feurig lieben.</p>
-                            </div>
-
-                            <div class="dish-category" id="getraenke">
-                                <h2>Getränke</h2>
-                                <p>Thai Iced Tea, Kokoswasser, Lemongras-Limo – erfrischend und exotisch.</p>
-                            </div>
-
-                        </section>
-
+                        <section id="menu_sections" class="menu-sections"></section>
                     </div>
-
 
                     <!-- Rechte Seite: Sticky-Warenkorb -->
                     <aside id="cart-sidebar" class="hide-on-mobile cart-sidebar">

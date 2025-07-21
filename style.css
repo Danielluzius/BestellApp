@@ -1,11 +1,25 @@
-/* ===================================== */
-/* 2. HEADER + HERO                      */
-/* ===================================== */
+.icon-btn {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0 5px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.icon-btn img {
+  width: 56px;
+  height: 56px;
+  border: none;
+  object-fit: cover;
+  background-size: cover;
+}
 
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 64px;
 }
 
 .header-logo {
@@ -35,10 +49,6 @@
   height: 240px;
 }
 
-/* ===================================== */
-/* 3. INHALTSBEREICH / FLEX-AUFTEILUNG  */
-/* ===================================== */
-
 .main-content {
   display: flex;
   gap: 40px;
@@ -54,14 +64,10 @@
   flex: 1;
 }
 
-/* ===================================== */
-/* 4. STICKY WARENKORB                   */
-/* ===================================== */
-
 .cart-sidebar {
   width: 300px;
   position: sticky;
-  top: 20px;
+  top: 80px;
   align-self: flex-start;
   padding: 20px;
   box-shadow: -3px 0 0px rgba(0, 0, 0, 0.05);
@@ -73,14 +79,6 @@
   flex-direction: column;
 }
 
-/* ===================================== */
-/* 5. MOBILER WARENKORB / POPUP         */
-/* ===================================== */
-
-/* ===================================== */
-/* 6. SICHTBARKEITSKLASSEN               */
-/* ===================================== */
-
 .hide-on-mobile {
   display: block;
 }
@@ -89,15 +87,73 @@
   display: none;
 }
 
-/* ===================================== */
-/* 7. RESPONSIVE DESIGN                  */
-/* ===================================== */
+.restaurant-info {
+  min-height: 102px;
+}
 
-@media (max-width: 950px) {
-  .main-content {
-    flex-direction: column;
-  }
+.restaurant-description {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.review-logo {
+  height: 24px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  margin: 10px 0;
+}
+
+.menu-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dish-image {
+  width: 100%;
+  height: 88px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.dish-category {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dish-category h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dish-item {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish-item .btn {
+  background-color: white;
+  color: #ef4765;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  font-size: 30px;
+}
+
+@media (max-width: 900px) {
   .hide-on-mobile {
     display: none;
   }
@@ -112,9 +168,8 @@
   color: #ef4765;
   border: 2px solid #ef4765;
   border-radius: 10px;
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 4px 12px;
+
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
