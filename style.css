@@ -314,6 +314,13 @@ footer p {
   text-align: center;
 }
 
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 800px) {
   .hide-on-mobile {
