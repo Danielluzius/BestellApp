@@ -45,6 +45,7 @@ function renderCart() {
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
   cartContent.innerHTML = result.html;
   cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
+  updateCartBadge();
 }
 
 function renderCartResponsive() {
@@ -53,6 +54,7 @@ function renderCartResponsive() {
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
   cartContent.innerHTML = result.html;
   cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
+  updateCartBadge();
 }
 
 function onAddMenu(name, price) {
@@ -127,5 +129,20 @@ function toggleBurgerMenu() {
     menu.style.display = 'flex';
   } else {
     menu.style.display = 'none';
+  }
+}
+
+function updateCartBadge() {
+  const badge = document.getElementById('cart-badge');
+  // Anzahl der Produkte im Warenkorb zusammenzählen
+  let count = 0;
+  for (let i = 0; i < cart.length; i++) {
+    count += cart[i].amount;
+  }
+  if (count > 0) {
+    badge.style.display = 'inline-block';
+    badge.textContent = count;
+  } else {
+    badge.style.display = 'none';
   }
 }
