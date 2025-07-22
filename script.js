@@ -134,7 +134,6 @@ function toggleBurgerMenu() {
 
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
-  // Anzahl der Produkte im Warenkorb zusammenzählen
   let count = 0;
   for (let i = 0; i < cart.length; i++) {
     count += cart[i].amount;
