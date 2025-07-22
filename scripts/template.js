@@ -1,11 +1,11 @@
 function menuCategoryTemplate(menuRef, i) {
   return /*html*/ `
     <div class="dish-category">
-      <div class="line"></div>
       <img src="${menuRef.image}" alt="${menuRef.title}" class="dish-image">
       <h2>${menuRef.title}:</h2>
       <div id="dish_description_${i}"></div>
     </div>
+    <div class="line"></div>
   `;
 }
 
@@ -26,9 +26,12 @@ function cartItemTemplate(item) {
   let sum = item.price * item.amount;
   return /*html*/ `
   <div class="cart-item">
-    ${item.amount}× ${item.name} – ${sum.toFixed(2)} €
-    <button onclick="removeFromCart('${item.name}')" class="btn remove">-</button>
+    ${item.amount}× ${item.name} <br> – ${sum.toFixed(2)} €
+    <div class="add-flex">
+    <button onclick="onAddMenu('${item.name}', ${item.price})" class="btn add-to-cart">+</button>
+    <button onclick="onRemoveMenu('${item.name}', ${item.price})" class="btn remove">-</button>
+    </div>
   </div>
-  <div class="line">
+  <div class="line-cart">
   </div>`;
 }

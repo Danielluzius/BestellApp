@@ -6,7 +6,7 @@ const menu = [
       {
         name: 'Satay Gai',
         price: 6.9,
-        description: 'Gegrillte Hähnchenspieße mit Erdnusssauce.',
+        description: 'Gegrillte Hähnchenspießen mit Erdnusssauce.',
       },
       {
         name: 'Frühlingsrollen',
