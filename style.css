@@ -94,13 +94,13 @@
   top: 80px;
   align-self: flex-start;
   padding: 20px;
-  box-shadow: -3px 0 0px rgba(0, 0, 0, 0.05);
   background: linear-gradient(90deg, #ef4765, #ff9a5a);
   border-radius: 4px;
   color: white;
   gap: 10px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
 }
 
 /* --- RESTAURANT INFO --- */
@@ -125,6 +125,7 @@
   background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
   margin: 24px 0 32px 0;
   scroll-margin-top: 56px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
 }
 
 .line-cart {
@@ -140,6 +141,7 @@
   height: 88px;
   border-radius: 4px;
   object-fit: cover;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
 }
 
 .dish-category {
@@ -160,6 +162,7 @@
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
 }
 
 .dish-item .btn {
@@ -212,8 +215,9 @@
   align-items: center;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
   background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
+  margin: 2px;
 }
 
 /* --- HIDE KLASSEN --- */
