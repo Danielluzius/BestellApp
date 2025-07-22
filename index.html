@@ -39,32 +39,32 @@
                     </button>
                 </div>
                 <nav id="dish-slider" class="hide-on-mobile">
-                    <a href="#dish_description_0"><img title="Vorspeisen" class="logo"
-                            src="./assets/img/Logo/starters.png" alt="Vorspeisen"></a>
-                    <a href="#dish_description_1"><img title="Hauptgerichte" class="logo"
-                            src="./assets/img/Logo/maindish.png" alt="Hauptgerichte"></a>
-                    <a href="#dish_description_2"><img title="Desserts" class="logo" src="./assets/img/Logo/dessert.png"
+                    <a href="#dish_image_0"><img title="Vorspeisen" class="logo" src="./assets/img/Logo/starters.png"
+                            alt="Vorspeisen"></a>
+                    <a href="#dish_image_1"><img title="Hauptgerichte" class="logo" src="./assets/img/Logo/maindish.png"
+                            alt="Hauptgerichte"></a>
+                    <a href="#dish_image_2"><img title="Desserts" class="logo" src="./assets/img/Logo/dessert.png"
                             alt="Desserts"></a>
-                    <a href="#dish_description_3"><img title="Veggie & Vegan" class="logo"
-                            src="./assets/img/Logo/veggie.png" alt="Veggie & Vegan"></a>
-                    <a href="#dish_description_4"><img title="Scharfe Spezialitäten" class="logo"
+                    <a href="#dish_image_3"><img title="Veggie & Vegan" class="logo" src="./assets/img/Logo/veggie.png"
+                            alt="Veggie & Vegan"></a>
+                    <a href="#dish_image_4"><img title="Scharfe Spezialitäten" class="logo"
                             src="./assets/img/Logo/spicy.png" alt="Scharfe Spezialitäten"></a>
-                    <a href="#dish_description_5"><img title="Getränke" class="logo" src="./assets/img/Logo/drink.png"
+                    <a href="#dish_image_5"><img title="Getränke" class="logo" src="./assets/img/Logo/drink.png"
                             alt="Getränke"></a>
                 </nav>
             </div>
             <nav id="burger-menu" class="mobile-nav hide-on-desktop" style="display: none;">
-                <a onclick="toggleBurgerMenu()" href="#dish_description_0"><img title="Vorspeisen" class="logo"
+                <a onclick="toggleBurgerMenu()" href="#dish_image_0"><img title="Vorspeisen" class="logo"
                         src="./assets/img/Logo/starters.png" alt="Vorspeisen"></a>
-                <a onclick="toggleBurgerMenu()" href="#dish_description_1"><img title="Hauptgerichte" class="logo"
+                <a onclick="toggleBurgerMenu()" href="#dish_image_1"><img title="Hauptgerichte" class="logo"
                         src="./assets/img/Logo/maindish.png" alt="Hauptgerichte"></a>
-                <a onclick="toggleBurgerMenu()" href="#dish_description_2"><img title="Desserts" class="logo"
+                <a onclick="toggleBurgerMenu()" href="#dish_image_2"><img title="Desserts" class="logo"
                         src="./assets/img/Logo/dessert.png" alt="Desserts"></a>
-                <a onclick="toggleBurgerMenu()" href="#dish_description_3"><img title="Veggie & Vegan" class="logo"
+                <a onclick="toggleBurgerMenu()" href="#dish_image_3"><img title="Veggie & Vegan" class="logo"
                         src="./assets/img/Logo/veggie.png" alt="Veggie & Vegan"></a>
-                <a onclick="toggleBurgerMenu()" href="#dish_description_4"><img title="Scharfe Spezialitäten"
-                        class="logo" src="./assets/img/Logo/spicy.png" alt="Scharfe Spezialitäten"></a>
-                <a onclick="toggleBurgerMenu()" href="#dish_description_5"><img title="Getränke" class="logo"
+                <a onclick="toggleBurgerMenu()" href="#dish_image_4"><img title="Scharfe Spezialitäten" class="logo"
+                        src="./assets/img/Logo/spicy.png" alt="Scharfe Spezialitäten"></a>
+                <a onclick="toggleBurgerMenu()" href="#dish_image_5"><img title="Getränke" class="logo"
                         src="./assets/img/Logo/drink.png" alt="Getränke"></a>
             </nav>
 
@@ -91,13 +91,12 @@
                             <p>Lieferkosten: Frei</p>
                             <p>Lieferzeit: 30-45 Minuten</p>
                         </div>
-                        <div class="line"></div>
                         <section id="menu_sections" class="menu-sections"></section>
                     </div>
 
                     <aside id="cart_sidebar" class="hide-on-mobile cart-sidebar">
                         <h2>Warenkorb</h2>
-                        <div id="cart_content">Noch nichts ausgewählt.</div>
+                        <div id="cart_content" class="cart-content">Noch nichts ausgewählt.</div>
                         <div id="cart_total">Gesamt: 0,00 €</div>
                         <button class="btn" onclick="orderNow();" class="btn" id="order_btn">Bestellen</button>
                     </aside>
@@ -117,9 +116,10 @@
     <div class="cart-popup" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="hideCartPopup()">&times;</span>
         <h2>Warenkorb</h2>
-        <div id="cart_content_responsive">Noch nichts ausgewählt.</div>
+        <div id="cart_content_responsive" class="cart-content-responsive">Noch nichts ausgewählt.</div>
         <div id="cart_total_responsive">Gesamt: 0,00 €</div>
-        <button onclick="orderNow()" class="btn btn-responsive" id="order_btn_responsive">Bestellen</button>
+        <button onclick="orderNow(); hideCartPopup();" class="btn btn-responsive"
+            id="order_btn_responsive">Bestellen</button>
     </div>
 </div>
 

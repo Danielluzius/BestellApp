@@ -120,7 +120,6 @@ function showThanksPopup() {
 
 function hideThanksPopup() {
   document.getElementById('thanks-popup').style.display = 'none';
-  location.reload();
 }
 
 function toggleBurgerMenu() {

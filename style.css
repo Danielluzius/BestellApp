@@ -124,6 +124,7 @@
   height: 1px;
   background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
   margin: 24px 0 32px 0;
+  scroll-margin-top: 56px;
 }
 
 .line-cart {
@@ -199,7 +200,10 @@
 #cart_content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-item {
@@ -311,14 +315,17 @@ footer p {
   .hide-on-mobile {
     display: none;
   }
+
   .hide-on-desktop {
     display: block;
     display: flex;
   }
+
   .main-content {
     flex-direction: column;
     gap: 20px;
   }
+
   .cart-sidebar {
     width: 100%;
     position: static;
@@ -326,12 +333,15 @@ footer p {
     border-radius: 0;
     margin-top: 20px;
   }
+
   .menu-area {
     width: 100%;
   }
+
   .dish-category {
     width: 100%;
   }
+
   #hero-logo img {
     height: 120px;
   }
@@ -343,6 +353,16 @@ footer p {
     padding: 10px;
     flex-wrap: wrap;
   }
+
+  .cart-content-responsive {
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-item {
+    padding: 4px;
 }
 
 @media (max-width: 380px) {

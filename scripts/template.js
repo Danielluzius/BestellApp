@@ -1,11 +1,12 @@
 function menuCategoryTemplate(menuRef, i) {
   return /*html*/ `
+  <div class="line" id="dish_image_${i}"></div>
     <div class="dish-category">
       <img src="${menuRef.image}" alt="${menuRef.title}" class="dish-image">
       <h2>${menuRef.title}:</h2>
       <div id="dish_description_${i}"></div>
     </div>
-    <div class="line"></div>
+    
   `;
 }
 
