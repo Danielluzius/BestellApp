@@ -26,40 +26,33 @@ function renderMenuItems() {
   }
 }
 
+function getCartHtmlAndTotal(cart, templateFn) {
+  if (cart.length === 0) {
+    return { html: 'Noch nichts ausgewählt.', total: 0, empty: true };
+  }
+  let html = '';
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    html += templateFn(cart[i]);
+    total += cart[i].price * cart[i].amount;
+  }
+  return { html, total, empty: false };
+}
+
 function renderCart() {
   let cartContent = document.getElementById('cart_content');
   let cartTotal = document.getElementById('cart_total');
-  let html = '';
-  let total = 0;
-  if (cart.length === 0) {
-    cartContent.innerHTML = 'Noch nichts ausgewählt.';
-    cartTotal.innerHTML = 'Gesamt: 0,00 €';
-    return;
-  }
-  for (let i = 0; i < cart.length; i++) {
-    html += cartItemTemplate(cart[i]);
-    total += cart[i].price * cart[i].amount;
-  }
-  cartContent.innerHTML = html;
-  cartTotal.innerHTML = `Gesamt: ${total.toFixed(2)} €`;
+  let result = getCartHtmlAndTotal(cart, cartItemTemplate);
+  cartContent.innerHTML = result.html;
+  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
 }
 
 function renderCartResponsive() {
   let cartContent = document.getElementById('cart_content_responsive');
   let cartTotal = document.getElementById('cart_total_responsive');
-  let html = '';
-  let total = 0;
-  if (cart.length === 0) {
-    cartContent.innerHTML = 'Noch nichts ausgewählt.';
-    cartTotal.innerHTML = 'Gesamt: 0,00 €';
-    return;
-  }
-  for (let i = 0; i < cart.length; i++) {
-    html += cartItemTemplate(cart[i]);
-    total += cart[i].price * cart[i].amount;
-  }
-  cartContent.innerHTML = html;
-  cartTotal.innerHTML = `Gesamt: ${total.toFixed(2)} €`;
+  let result = getCartHtmlAndTotal(cart, cartItemTemplate);
+  cartContent.innerHTML = result.html;
+  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
 }
 
 function onAddMenu(name, price) {
@@ -131,7 +124,7 @@ function hideThanksPopup() {
 function toggleBurgerMenu() {
   const menu = document.getElementById('burger-menu');
   if (menu.style.display === 'none' || menu.style.display === '') {
-    menu.style.display = 'flex'; // Oder 'block', je nach deinem Layout
+    menu.style.display = 'flex';
   } else {
     menu.style.display = 'none';
   }
