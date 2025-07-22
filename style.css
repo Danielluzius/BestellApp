@@ -251,10 +251,10 @@
     margin-top: 20px;
   }
   .menu-area {
-    width: 100%; /* Stellt sicher, dass die Menüspalte mobil die ganze Breite einnimmt */
+    width: 100%;
   }
   .dish-category {
-    width: 100%; /* Jede Kategorie ebenfalls vollbreit */
+    width: 100%;
   }
   #hero-logo img {
     height: 120px;
