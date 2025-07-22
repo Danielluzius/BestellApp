@@ -1,88 +1,71 @@
+let cart = [];
+
 function init() {
   renderMenu();
   renderMenuItems();
+  renderCart();
 }
 
-let menuContainer = document.getElementById('menu_sections');
-
 function renderMenu() {
+  let menuContainer = document.getElementById('menu_sections');
   let menuHtml = '';
-
-  for (let index = 0; index < menu.length; index++) {
-    const menuRef = menu[index];
-    menuHtml += menuTemplate(menuRef, index);
+  for (let i = 0; i < menu.length; i++) {
+    menuHtml += menuCategoryTemplate(menu[i], i);
   }
-
   menuContainer.innerHTML = menuHtml;
 }
 
 function renderMenuItems() {
   for (let i = 0; i < menu.length; i++) {
-    const menuRef = menu[i].items;
-    const targetId = document.getElementById(`dish_description_${i}`);
-
     let itemsHtml = '';
-
-    for (let j = 0; j < menuRef.length; j++) {
-      itemsHtml += itemTemplate(menuRef[j]);
+    let items = menu[i].items;
+    for (let j = 0; j < items.length; j++) {
+      itemsHtml += menuItemTemplate(items[j]);
     }
-
-    targetId.innerHTML = itemsHtml;
+    document.getElementById(`dish_description_${i}`).innerHTML = itemsHtml;
   }
 }
 
 function renderCart() {
-  let cartContent = document.getElementById('cart-content');
-  let cartTotal = document.getElementById('cart-total');
+  let cartContent = document.getElementById('cart_content');
+  let cartTotal = document.getElementById('cart_total');
   let html = '';
-
   let total = 0;
-
   if (cart.length === 0) {
     cartContent.innerHTML = 'Noch nichts ausgewählt.';
     cartTotal.innerHTML = 'Gesamt: 0,00 €';
     return;
   }
-
-  for (let item of cart) {
-    let itemTotal = item.price * item.amount;
-    total += itemTotal;
-
-    html += /*html*/ `
-    <div>${item.amount}× ${item.name} – ${itemTotal.toFixed(2)} €
-    </div>`;
+  for (let i = 0; i < cart.length; i++) {
+    html += cartItemTemplate(cart[i]);
+    total += cart[i].price * cart[i].amount;
   }
-
   cartContent.innerHTML = html;
   cartTotal.innerHTML = `Gesamt: ${total.toFixed(2)} €`;
 }
 
-function getValueFromInput(id) {
-  return document.getElementById(id).value;
-}
-
-function getMenuFromInput() {
-  return getValueFromInput('menu.items.name').trim();
-}
-
-function getPriceFromInput() {
-  return parseFloat(getValueFromInput('menu.items.price'));
-}
-
-let cart = [];
-
 function onAddMenu(name, price) {
-  let index = cart.findIndex((item) => item.name === name);
-
+  let index = -1;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].name === name) {
+      index = i;
+      break;
+    }
+  }
   if (index === -1) {
     cart.push({ name, price, amount: 1 });
   } else {
     cart[index].amount++;
   }
-
   renderCart();
 }
 
-function getMenuIndex(menu) {
-  return menus.indexOf(menu);
+function removeFromCart(name) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].name === name) {
+      cart.splice(i, 1);
+      break;
+    }
+  }
+  renderCart();
 }

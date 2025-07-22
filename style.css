@@ -1,3 +1,4 @@
+/* --- ICON BUTTONS --- */
 .icon-btn {
   background: none;
   border: none;
@@ -6,7 +7,6 @@
   cursor: pointer;
   margin: 0;
 }
-
 .icon-btn img {
   width: 56px;
   height: 56px;
@@ -15,55 +15,53 @@
   background-size: cover;
 }
 
+/* --- HEADER --- */
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-height: 64px;
 }
-
 .header-logo {
   height: 40px;
 }
 
+/* --- HERO SECTION --- */
 #hero {
   position: relative;
   background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
 }
-
 .hero-image {
   width: 100%;
   height: 250px;
   object-fit: cover;
   filter: brightness(0.8);
 }
-
 #hero-logo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 #hero-logo img {
   height: 240px;
 }
 
+/* --- MAIN CONTENT AREA --- */
 .main-content {
   display: flex;
   gap: 40px;
   align-items: flex-start;
 }
-
 .menu-area {
   flex: 1;
   min-width: 0;
 }
-
 .content-area {
   flex: 1;
 }
 
+/* --- CART SIDEBAR --- */
 .cart-sidebar {
   width: 300px;
   position: sticky;
@@ -79,59 +77,43 @@
   flex-direction: column;
 }
 
-.hide-on-mobile {
-  display: block;
-}
-
-.hide-on-desktop {
-  display: none;
-}
-
+/* --- RESTAURANT INFO --- */
 .restaurant-info {
   min-height: 102px;
 }
-
 .restaurant-description {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .review-logo {
   height: 24px;
 }
 
+/* --- TRENNLINIE --- */
 .line {
   width: 100%;
   height: 1px;
-  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
-  margin: 10px 0;
+  background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
+  margin: 24px 0 32px 0;
 }
 
-.menu-sections {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
+/* --- MENÜ-BEREICH --- */
 .dish-image {
   width: 100%;
   height: 88px;
   border-radius: 4px;
   object-fit: cover;
 }
-
 .dish-category {
-  gap: 8px;
-  display: flex;
-  flex-direction: column;
+  padding: 10px, 0;
 }
-
 .dish-category h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
+/* --- MENÜ ITEMS --- */
 .dish-item {
   background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
   color: white;
@@ -141,7 +123,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 .dish-item .btn {
   background-color: white;
   color: #ef4765;
@@ -153,29 +134,77 @@
   font-size: 30px;
 }
 
-@media (max-width: 900px) {
-  .hide-on-mobile {
-    display: none;
-  }
-
-  .hide-on-desktop {
-    display: block;
-  }
-}
-
+/* --- BUTTONS --- */
 .btn {
   background-color: white;
   color: #ef4765;
   border: 2px solid #ef4765;
   border-radius: 10px;
-  padding: 4px 12px;
-
+  padding: 4px 6px;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  font-size: 16px;
+  font-family: inherit;
 }
-
 .btn:hover {
   background-color: #ef4765;
   color: white;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+#order_btn {
+  margin-top: 20px;
+}
+
+/* --- CART CONTENT --- */
+#cart_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #ff9a5a, #ef4765);
+}
+
+/* --- HIDE KLASSEN --- */
+.hide-on-mobile {
+  display: block;
+}
+.hide-on-desktop {
+  display: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 960px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .hide-on-desktop {
+    display: block;
+  }
+  .main-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cart-sidebar {
+    width: 100%;
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+  .menu-area {
+    width: 100%; /* Stellt sicher, dass die Menüspalte mobil die ganze Breite einnimmt */
+  }
+  .dish-category {
+    width: 100%; /* Jede Kategorie ebenfalls vollbreit */
+  }
+  #hero-logo img {
+    height: 120px;
+  }
 }

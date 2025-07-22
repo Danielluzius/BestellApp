@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bite⚡Rush </title>
+    <title>Bite⚡Rush</title>
 
-    <link rel="stylesheet" href="./style.css" />
+    <!-- Basis-Styles immer zuerst -->
     <link rel="stylesheet" href="./style/standart.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./style/assets.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +25,6 @@
 
 <body onload="init()">
     <div class="page-wrapper">
-
         <!-- OBERE NAVIGATION -->
         <header>
             <div class="section-wrapper header-flex">
@@ -38,14 +38,13 @@
                     </button>
                 </div>
                 <nav id="dish-slider" class="hide-on-mobile">
-                    <button class="btn"><a href="#dish_description_0">Vorspeisen</a></button>
-                    <button class="btn"><a href="#dish_description_1">Hauptgerichte</a></button>
-                    <button class="btn"><a href="#dish_description_2">Desserts</a></button>
-                    <button class="btn"><a href="#dish_description_3">Veggie & Vegan</a></button>
-                    <button class="btn"><a href="#dish_description_4">Scharfe Spezialitäten</a></button>
-                    <button class="btn"><a href="#dish_description_5">Getränke</a></button>
+                    <a class="btn" href="#dish_description_0">Vorspeisen</a>
+                    <a class="btn" href="#dish_description_1">Hauptgerichte</a>
+                    <a class="btn" href="#dish_description_2">Desserts</a>
+                    <a class="btn" href="#dish_description_3">Veggie & Vegan</a>
+                    <a class="btn" href="#dish_description_4">Scharfe Spezialitäten</a>
+                    <a class="btn" href="#dish_description_5">Getränke</a>
                 </nav>
-
             </div>
         </header>
 
@@ -69,21 +68,19 @@
                                 <p>Bewertung:</p>
                                 <img src="./assets/img/Logo/review.webp" alt="Bewertungen" class="review-logo">
                             </div>
-                            <p>Lieferkosten: 4,99 €</p>
+                            <p>Lieferkosten: 2,00 €</p>
                             <p>Lieferzeit: 30-45 Minuten</p>
                         </div>
-
                         <section id="menu_sections" class="menu-sections"></section>
                     </div>
 
                     <!-- Rechte Seite: Sticky-Warenkorb -->
-                    <aside id="cart-sidebar" class="hide-on-mobile cart-sidebar">
+                    <aside id="cart_sidebar" class="hide-on-mobile cart-sidebar">
                         <h2>Warenkorb</h2>
-                        <div id="cart-content">Noch nichts ausgewählt.</div>
-                        <div id="cart-total">Gesamt: 0,00 €</div>
-                        <button class="btn" id="order-btn">Bestellen</button>
+                        <div id="cart_content">Noch nichts ausgewählt.</div>
+                        <div id="cart_total">Gesamt: 0,00 €</div>
+                        <button class="btn" id="order_btn">Bestellen</button>
                     </aside>
-
                 </div>
             </div>
         </main>
@@ -93,11 +90,7 @@
                 <p>Impressum | Datenschutz | Kontakt | © 2025 Daniel</p>
             </div>
         </footer>
-
     </div>
 </body>
-
-
-
 
 </html>
