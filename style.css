@@ -95,7 +95,7 @@
   align-self: flex-start;
   padding: 20px;
   box-shadow: -3px 0 0px rgba(0, 0, 0, 0.05);
-  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  background: linear-gradient(90deg, #ef4765, #ff9a5a);
   border-radius: 4px;
   color: white;
   gap: 10px;

@@ -44,7 +44,7 @@ function renderCart() {
   let cartTotal = document.getElementById('cart_total');
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
   cartContent.innerHTML = result.html;
-  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
+  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2).replace('.', ',')} €`;
   updateCartBadge();
 }
 
@@ -53,7 +53,7 @@ function renderCartResponsive() {
   let cartTotal = document.getElementById('cart_total_responsive');
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
   cartContent.innerHTML = result.html;
-  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2)} €`;
+  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2).replace('.', ',')} €`;
   updateCartBadge();
 }
 

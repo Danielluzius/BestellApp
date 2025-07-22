@@ -14,7 +14,7 @@ function menuItemTemplate(item) {
     <div class="dish-item">
       <div class="dish-item-container">
         <h3>${item.name}</h3>
-        <p>Preis: ${item.price.toFixed(2)} €</p>
+        <p>Preis: ${item.price.toFixed(2).replace('.', ',')} €</p>
         <p>${item.description}</p>
       </div>
       <button onclick="onAddMenu('${item.name}', ${item.price})" class="btn add-to-cart">+</button>
@@ -26,7 +26,7 @@ function cartItemTemplate(item) {
   let sum = item.price * item.amount;
   return /*html*/ `
   <div class="cart-item">
-    ${item.amount}× ${item.name} <br> – ${sum.toFixed(2)} €
+    ${item.amount}× ${item.name} <br> + ${sum.toFixed(2).replace('.', ',')} €
     <div class="add-flex">
     <button onclick="onAddMenu('${item.name}', ${item.price})" class="btn add-to-cart">+</button>
     <button onclick="onRemoveMenu('${item.name}', ${item.price})" class="btn remove">-</button>
