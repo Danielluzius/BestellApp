@@ -85,7 +85,7 @@ function renderCart() {
   if (result.deliveryCosts > 0) {
     deliveryCostsText = 'Lieferkosten: ' + result.deliveryCosts.toFixed(2).replace('.', ',') + ' €';
   } else {
-    deliveryCostsText = 'Lieferkosten: Frei';
+    deliveryCostsText = 'Lieferkosten: 0,00 €';
   }
   cartContent.innerHTML = result.html + '<div class="delivery-costs">' + deliveryCostsText + '</div>';
   cartTotal.innerHTML = 'Gesamt: ' + result.total.toFixed(2).replace('.', ',') + ' €';
