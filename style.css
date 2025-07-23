@@ -71,15 +71,14 @@
   height: 240px;
 }
 
-/* --- HEADLINE --- */
-.headline {
+.headline-text {
   display: flex;
   align-items: flex-end;
   gap: 9px;
   margin-top: 20px;
 }
 
-.headline h3 {
+.headline-text h3 {
   margin-bottom: 5px;
 }
 
@@ -417,18 +416,18 @@ footer p {
 }
 
 @media (max-width: 365px) {
-  .headline {
+  .headline-text {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
     gap: 0;
   }
 
-  .headline h1 {
+  .headline-text h1 {
     padding: 0;
   }
 
-  .headline h3 {
+  .headline-text h3 {
     padding: 0;
   }
 
