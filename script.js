@@ -1,9 +1,22 @@
 let cart = [];
+const deliveryCosts = 2.5;
+const minimumOrder = 20;
 
 function init() {
   renderMenu();
   renderMenuItems();
   renderCart();
+}
+
+function calculateDeliveryCosts(total) {
+  if (total === 0) {
+    return 0;
+  }
+  if (total < minimumOrder) {
+    return deliveryCosts;
+  } else {
+    return 0;
+  }
 }
 
 function renderMenu() {
@@ -28,23 +41,55 @@ function renderMenuItems() {
 
 function getCartHtmlAndTotal(cart, templateFn) {
   if (cart.length === 0) {
-    return { html: 'Noch nichts ausgewählt.', total: 0, empty: true };
+    return getEmptyCartResult();
   }
+
   let html = '';
   let total = 0;
+
   for (let i = 0; i < cart.length; i++) {
-    html += templateFn(cart[i]);
-    total += cart[i].price * cart[i].amount;
+    let item = cart[i];
+    html = html + templateFn(item);
+    total = total + item.price * item.amount;
   }
-  return { html, total, empty: false };
+
+  let deliveryCosts = calculateDeliveryCosts(total);
+  return getFullCartResult(html, total, deliveryCosts);
+}
+
+function getEmptyCartResult() {
+  return {
+    html: 'Noch nichts ausgewählt.',
+    total: 0,
+    empty: true,
+    deliveryCosts: 0,
+    worthOfGoods: 0,
+  };
+}
+
+function getFullCartResult(html, total, deliveryCosts) {
+  return {
+    html: html,
+    total: total + deliveryCosts,
+    empty: false,
+    deliveryCosts: deliveryCosts,
+    worthOfGoods: total,
+  };
 }
 
 function renderCart() {
   let cartContent = document.getElementById('cart_content');
   let cartTotal = document.getElementById('cart_total');
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
-  cartContent.innerHTML = result.html;
-  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2).replace('.', ',')} €`;
+  let deliveryCostsText;
+  if (result.deliveryCosts > 0) {
+    deliveryCostsText = 'Lieferkosten: ' + result.deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  } else {
+    deliveryCostsText = 'Lieferkosten: Frei';
+  }
+  cartContent.innerHTML = result.html + '<div class="delivery-costs">' + deliveryCostsText + '</div>';
+  cartTotal.innerHTML = 'Gesamt: ' + result.total.toFixed(2).replace('.', ',') + ' €';
+
   updateCartBadge();
 }
 
@@ -52,8 +97,14 @@ function renderCartResponsive() {
   let cartContent = document.getElementById('cart_content_responsive');
   let cartTotal = document.getElementById('cart_total_responsive');
   let result = getCartHtmlAndTotal(cart, cartItemTemplate);
-  cartContent.innerHTML = result.html;
-  cartTotal.innerHTML = `Gesamt: ${result.total.toFixed(2).replace('.', ',')} €`;
+  let deliveryCostsText;
+  if (result.deliveryCosts > 0) {
+    deliveryCostsText = 'Lieferkosten: ' + result.deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  } else {
+    deliveryCostsText = 'Lieferkosten: 0,00 €';
+  }
+  cartContent.innerHTML = result.html + '<div class="delivery-costs">' + deliveryCostsText + '</div>';
+  cartTotal.innerHTML = 'Gesamt: ' + result.total.toFixed(2).replace('.', ',') + ' €';
   updateCartBadge();
 }
 
